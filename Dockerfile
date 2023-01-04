@@ -8,5 +8,6 @@ COPY jp.rule /app/jp.rule
 COPY run.sh /app/run.sh
 RUN chmod +x /app/glider && \
     chmod +x /app/gost && \
+    chmod +x /app/Cli && \
     chmod +x /app/run.sh 
 ENTRYPOINT /app/run.sh
