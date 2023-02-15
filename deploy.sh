@@ -43,6 +43,31 @@ processes = []
   [[services.ports]]
     port = 1080
 
+[[services]]
+  http_checks = []
+  internal_port = 80
+  # processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  
+  [services.concurrency]
+    hard_limit = 50
+    soft_limit = 35
+    type = "connections"
+  
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+  
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+  
+  [[services.tcp_checks]]
+    grace_period = "120s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
  
 EOF
 printf '\e[32mCreate app config file success.\n\e[0m'
