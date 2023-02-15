@@ -13,6 +13,7 @@ fi
 
     flyctl apps create "${APP_NAME}" >/dev/null 2>&1;
 
+flyctl ips allocate-v6
 
 printf '\e[33mNext, create app config file - fly.toml.\n\e[0m'
 cat <<EOF >./fly.toml
