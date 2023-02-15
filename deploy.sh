@@ -41,18 +41,9 @@ processes = []
     type = "connections"
 
   [[services.ports]]
-    handlers = ["http"]
-    port = 80
+    port = 1080
 
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
-
-  [[services.tcp_checks]]
-    grace_period = "120s"
-    interval = "15s"
-    restart_limit = 0
-    timeout = "2s"
+ 
 EOF
 printf '\e[32mCreate app config file success.\n\e[0m'
 printf '\e[33mNext, set app secrets and regions.\n\e[0m'
