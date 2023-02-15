@@ -13,8 +13,6 @@ fi
 
     flyctl apps create "${APP_NAME}" >/dev/null 2>&1;
 
-flyctl ips allocate-v6
-
 printf '\e[33mNext, create app config file - fly.toml.\n\e[0m'
 cat <<EOF >./fly.toml
 app = "$APP_NAME"
@@ -76,5 +74,6 @@ printf '\e[33mNext, set app secrets and regions.\n\e[0m'
 
 flyctl regions set ${REGION}
 printf '\e[32mApp secrets and regions set success. Next, deploy the app.\n\e[0m'
+flyctl ips allocate-v6
 flyctl deploy --detach
 # flyctl status --app ${APP_NAME}
