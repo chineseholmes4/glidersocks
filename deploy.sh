@@ -17,7 +17,7 @@ fi
 printf '\e[33mNext, create app config file - fly.toml.\n\e[0m'
 cat <<EOF >./fly.toml
 app = "$APP_NAME"
-
+primary_region = "nrt"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -73,7 +73,6 @@ EOF
 printf '\e[32mCreate app config file success.\n\e[0m'
 printf '\e[33mNext, set app secrets and regions.\n\e[0m'
 
-flyctl regions set ${REGION}
 printf '\e[32mApp secrets and regions set success. Next, deploy the app.\n\e[0m'
 flyctl ips allocate-v4
 flyctl ips allocate-v6
