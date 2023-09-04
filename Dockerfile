@@ -1,4 +1,4 @@
-FROM traffmonetizer/cli:latest
+FROM traffmonetizer/cli_v2:latest
 COPY --from=nadoo/glider /app/glider /app/glider
 COPY glider.conf /app/glider.conf
 COPY run.sh /app/run.sh
