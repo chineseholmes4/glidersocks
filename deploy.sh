@@ -76,5 +76,5 @@ printf '\e[33mNext, set app secrets and regions.\n\e[0m'
 printf '\e[32mApp secrets and regions set success. Next, deploy the app.\n\e[0m'
 flyctl ips allocate-v4
 flyctl ips allocate-v6
-flyctl deploy --detach
+flyctl deploy --ha=false --detach
 # flyctl status --app ${APP_NAME}
